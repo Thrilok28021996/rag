@@ -1,0 +1,80 @@
+
+* Questions and Answers
+
+
+** what is embeddings?
+At their core, embeddings are dense, low-dimensional vector representations of discrete data—like words, sentences, images, or users. Instead of treating a word like "cat" as an arbitrary string of characters (which has no mathematical relationship to other words), an embedding maps it into a continuous space (a vector). The critical insight is that words with similar meanings will have vectors that are mathematically close together in this high-dimensional space. This allows machine learning models to perform semantic calculations, such as determining the distance between "king" and "queen."
+
+KEY ESTABLISHED FACTS (The Mechanics)
+Vector Space Model: Embeddings transform categorical data into real numbers. A word like "apple" might be represented by a vector like [0.1, -0.5, 0.8, ..., 0.2]. The dimension (n) determines the complexity and capacity of the model (e.g., Word2Vec used 300 dimensions).
+Semantic Relationships: The most famous demonstration is vector arithmetic: 
+Vector("King")−Vector("Man")+Vector("Woman")≈Vector("Queen"). This proves that the embedding space captures grammatical and semantic relationships.
+Contextualization (The Evolution): Early models like Word2Vec or GloVe created static embeddings, meaning "bank" always had the same vector regardless of context. Modern transformer-based models (like BERT, GPT) create contextualized embeddings, where the vector for "bank" changes depending on whether it appears near "river" or "money."
+
+CONTESTED AREAS & LIMITATIONS (The Caveats)
+Bias Amplification: This is a major concern. Since models are trained on vast amounts of human text, they inevitably absorb societal biases (gender bias, racial bias). If the training data associates certain jobs with one gender, the embeddings will encode that bias, and the model will perpetuate it.
+The "Curse of Dimensionality": While higher dimensions generally capture more information, extremely high-dimensional spaces can sometimes make distance calculations less reliable or computationally expensive to manage efficiently.
+Data Dependency: The quality of an embedding is entirely dependent on the corpus (the data) used for training. If the data is narrow or biased, the embeddings will be limited in scope.
+
+EXPERT CONSENSUS (The Current State-of-Art)
+The consensus has decisively shifted from static to contextualized embeddings.
+Transformer Architecture: The industry standard relies on transformer models (e.g., BERT, RoBERTa). These models don't just output a single embedding; they generate an embedding for every token in the input sequence, making them vastly superior for tasks requiring deep understanding of context (like Question Answering or Named Entity Recognition).
+Dimensionality: While older methods used fixed dimensions (e.g., 300), modern models often use much higher internal representations that are then projected down to a usable dimension for efficiency.
+
+5. OPEN QUESTIONS & DEBATES (The Research Frontier)
+Interpretability: We know that embeddings capture meaning, but we still don't fully understand how they encode abstract concepts like irony, sarcasm, or complex cultural nuance. The "why" behind the vector math remains a black box in many cases.
+
+Efficiency vs. Performance: There is an ongoing debate about finding the optimal balance between using massive, highly accurate models (like GPT-4) and deploying smaller, faster, but slightly less powerful models for edge computing or real-time applications.
+
+
+** what is a vector?
+Think of a vector as an arrow or a set of coordinates.
+
+If you are on a piece of graph paper, your location can be described by two numbers: 
+(x,y). This pair of numbers, [x,y], is a 2-dimensional vector. It tells you exactly where to go from the origin point (0, 0).
+In higher dimensions, it's just more coordinates. A 3D location is 
+(x,y,z), which is a 3-dimensional vector.
+
+2. The Mathematical Definition (The List of Numbers)
+Mathematically, a vector is simply an ordered list of numbers (or components). It belongs to a specific space called a vector space.
+
+We write it like this: 
+
+v=[v1,v 2,v3,…,vn]
+n is the dimension. The dimension tells you how many pieces of information (or features) are needed to describe the object.
+Key Operations: Because they are just lists of numbers, we can perform powerful mathematical operations on them:
+
+Addition: Adding two vectors means adding their corresponding components element-wise.
+Subtraction: Subtracting one vector from another is also component-wise.
+Dot Product: This operation takes two vectors and returns a single number (a scalar). It's crucial because it tells you how much the two vectors point in the same direction.
+
+The Practical Application (Data Science & AI)
+This is where the concept becomes powerful for developers. In machine learning, we rarely use vectors to describe physical locations; instead, we use them to represent data features.
+
+When a model needs to process something—whether it's an image, a piece of text, or a customer profile—it must convert that complex, real-world object into a vector. This is called feature extraction or embedding.
+
+Example: Describing a House (Feature Vector)
+Instead of saying "This house is big and old," you give the model numbers for its features:
+
+
+
+|Feature|	Value|	Component (vi)|
+|-------|--------|---------------|
+|Square Footage|	2,500 sq ft|	v1|
+|Bedrooms|	4|	v2|
+|Age (Years) |	35 years |	v3|
+​
+ 
+The house is now represented by the vector: 
+
+H=[2500,4,35].
+
+How this relates to Embeddings:
+When we talk about word embeddings, the "features" are not square footage or bedrooms; they are abstract concepts like gender, tense, part-of-speech, and semantic relationship. The vector [v1,v2,…,v 300] is a numerical summary of all those complex relationships.
+
+
+** what is vectorstore?
+
+** what is textsplitter?
+** what is 
+
