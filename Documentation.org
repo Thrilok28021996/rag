@@ -1,0 +1,16 @@
+
+* Progress So Far in Building A RAG Project with experiments, evaluations
+The Basic Rag is Done with retrieval and Generation added up
+
+
+** TO-DO
+- [ ] Need to Add the code to use with mulitple file formats such as pdf, csv, txt etc.,
+
+
+
+
+
+
+
+
+** Experimentations
